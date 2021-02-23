@@ -1,0 +1,43 @@
+.container {
+  display: grid;
+  height: 100vh;
+
+  /* Dividing the Width of screen
+     in 12 equal fractions. */
+
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 10px;
+}
+
+.box-1 {
+  /* Cover 4 columns. 
+    So, start = 1 || end = 4+1 = 5;
+    grid-column : start/end; 👈 Short-Hand */
+
+  background-color: burlywood;
+  grid-column: 1/5;
+}
+.box-2 {
+  /* Cover remaining columns. 
+    This value 👇 is taken from .box-1 ☝️
+    So, start = 5 || end = 12+1 = 13;
+    grid-column : start/end; 👈 Short-Hand */
+  grid-column: 5/13;
+  background-color: blueviolet;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    /* Columna definida en un 100% */
+    grid-template-columns: 100%;
+
+    /* Dos filas */
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  /* Removiendo los valores previamente definidos y heredando los responsivos */
+  .box-1,
+  .box-2 {
+    grid-column: inherit;
+  }
+}

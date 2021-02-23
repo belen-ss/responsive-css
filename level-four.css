@@ -1,0 +1,50 @@
+.container {
+  display: grid;
+  height: 100vh;
+
+  /* Creating a 12 column X 3 row grid */
+  /* Definiendo 'a' toma 12 columnas y 1 fila, 'b' toma 8 columnas y 2 filas, y 'c' el resto. Separar con espacios */
+
+  grid-template-areas:
+    "a a a a  a a a a  a a a a"
+    "b b b b  b b b b  e e e e"
+    "b b b b  b b b b  e e e e"
+    "c c c c  d d d d  e e e e";
+  grid-gap: 20px;
+}
+
+.box-1 {
+  grid-area: a;
+  background-color: chartreuse;
+}
+
+.box-2 {
+  grid-area: b;
+  background-color: coral;
+}
+
+.box-3 {
+  grid-area: c;
+  background-color: darkmagenta;
+}
+
+.box-4 {
+  grid-area: d;
+  background-color: darkturquoise;
+}
+
+.box-5 {
+  grid-area: e;
+  background-color: deeppink;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    grid-template-areas:
+      "a a a a    a a a a    a a a a"
+      "b b b b    b b b b    b b b b"
+      "b b b b    b b b b    b b b b"
+      "c c c c    c c d d    d d d d"
+      "e e e e    e e e e    e e e e";
+  }
+}
